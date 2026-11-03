@@ -1,0 +1,17 @@
+CREATE OR REPLACE FUNCTION public.update_sparx_answer(table_name text, search_content text, new_answer jsonb DEFAULT NULL::jsonb, new_incorrect_answers jsonb DEFAULT NULL::jsonb, new_ai_model text DEFAULT NULL::text)
+ RETURNS void
+ LANGUAGE plpgsql
+AS $function$
+BEGIN
+    EXECUTE format(
+        'UPDATE %I
+         SET 
+            answer = CASE WHEN $1 IS NULL THEN answer ELSE $1 END,
+            incorrect_answers = CASE WHEN $2 IS NULL THEN incorrect_answers ELSE $2 END,
+            ai_model = CASE WHEN $3 IS NULL THEN ai_model ELSE $3 END
+         WHERE content::text = $4',
+        table_name
+    )
+    USING new_answer, new_incorrect_answers, new_ai_model, search_content;
+END;
+$function$

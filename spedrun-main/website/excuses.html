@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>excuses - Hielke AI</title>
+    <link rel="stylesheet" href="/assets/site.css?v=38">
+    <script src="/assets/theme.js?v=3" defer></script>
+    <link rel="icon" type="image/webp" href="favicon.webp">
+    <script src="site.js" defer></script>
+</head>
+<body>
+    <header>
+      <nav>
+        <a class="brand" href="/"><img class="logo-img" src="/logo.png" alt="Hielke AI">Hielke AI</a>
+        <div class="nav-links">
+          <a href="/definitions">Dictionary</a>
+          <a href="/excuses">Excuses</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/reseller">Reseller</a>
+          <a class="btn btn-ghost" href="https://discord.gg/3b7W2mQBuV">Support</a>
+          <a class="btn btn-ghost" href="/login">Sign in</a>
+          <a class="btn btn-primary" href="/start">Get started</a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+      </nav>
+    </header>
+
+    <main>
+        <section class="home-hero" aria-labelledby="excuses-heading">
+            <p class="eyebrow">540+ excuses · Powered by dog chaos, Anthropic roasts & school panic</p>
+            <h2 id="excuses-heading">The Ultimate Homework Excuse Generator</h2>
+            <p>Homework due in 3 minutes? Did your dog digest your quadratic formula? Did Claude give you a 14-paragraph lecture on the ethics of long division? Pick a category, generate a bulletproof excuse, and submit nothing with pride.</p>
+        </section>
+
+        <section class="excuse-generator-panel panel" aria-labelledby="generator-heading">
+            <h2 id="generator-heading">Homework excuse generator</h2>
+            <p class="stat-caption">Filter by flavor of avoidance:</p>
+            <div class="category-filters" role="group" aria-label="Excuse categories">
+                <button type="button" class="filter-btn active" data-category="all">🎲 All Excuses (<span id="count-all">0</span>)</button>
+                <button type="button" class="filter-btn" data-category="dog">🐶 Dog Ate It (<span id="count-dog">0</span>)</button>
+                <button type="button" class="filter-btn" data-category="anthropic">🤖 Anthropic Roasts (<span id="count-anthropic">0</span>)</button>
+                <button type="button" class="filter-btn" data-category="mistral">⚡ Mistral Supremacy (<span id="count-mistral">0</span>)</button>
+                <button type="button" class="filter-btn" data-category="platform">📚 Platform Fails (<span id="count-platform">0</span>)</button>
+                <button type="button" class="filter-btn" data-category="tech">💻 Tech & Wi-Fi (<span id="count-tech">0</span>)</button>
+                <button type="button" class="filter-btn" data-category="mathsci">🔬 Maths & Science (<span id="count-mathsci">0</span>)</button>
+                <button type="button" class="filter-btn" data-category="procrastination">🛌 Procrastination (<span id="count-procrastination">0</span>)</button>
+                <button type="button" class="filter-btn" data-category="classic">🎒 Classic School (<span id="count-classic">0</span>)</button>
+            </div>
+
+            <div class="excuse-card" aria-live="polite">
+                <div class="excuse-card-header">
+                    <span id="excuse-badge" class="excuse-badge" data-category="dog">🐶 The Dog Ate It</span>
+                </div>
+                <p id="excuse-display" class="excuse-text">The dog opened 47 browser tabs and lost my worksheet.</p>
+            </div>
+
+            <div class="excuse-controls">
+                <button id="generate-excuse-btn" class="payment-button" type="button">🎲 generate another excuse</button>
+                <button id="copy-excuse-btn" class="secondary-button" type="button">📋 copy excuse</button>
+                <span id="copy-feedback" class="copy-feedback" role="status" aria-live="polite" hidden>Copied to clipboard!</span>
+            </div>
+        </section>
+
+        <section class="home-notes" aria-label="Hall of fame excuses">
+            <article class="home-note">
+                <h3>🐶 The Canine Digestion Law</h3>
+                <p>"My dog ate my physics assignment to prove the law of conservation of mass: the homework is not destroyed, it is merely undergoing canine digestion."</p>
+            </article>
+            <article class="home-note">
+                <h3>🤖 The Anthropic Special</h3>
+                <p>"Claude hit me with 'As a helpful and harmless assistant, I cannot complete your physics homework because kinetic energy can cause harm.' Mistral did the whole calculation and asked if I wanted a croissant."</p>
+            </article>
+            <article class="home-note">
+                <h3>📚 The Sparx Bookwork Check</h3>
+                <p>"Sparx Maths gave me a bookwork check for a question I answered three lifetimes ago, so I closed the laptop and chose inner peace."</p>
+            </article>
+            <article class="home-note">
+                <h3>⚡ The French Speedrun</h3>
+                <p>"Anthropic spent billions of dollars creating an AI that acts like a nervous substitute teacher. Meanwhile Mistral solved the worksheet in 0.05 seconds between sips of espresso."</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <nav class="footer-links" aria-label="Footer links">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="links.html">links</a>
+            <a href="contact.html">contact</a>
+            <a href="projects.html">projects</a>
+            <a href="schools.html">schools</a>
+            <a href="sparx.html">sparx</a>
+            <a href="excuses.html">excuses</a>
+            <a href="definitions.html">dictionary</a>
+            <a href="payment.html">payment</a>
+            <a href="dashboard.html">dashboard</a>
+            <a href="https://discord.gg/SYGz4ZTkTZ">discord</a>
+            <a href="https://chat.mistral.ai">mistral</a>
+        </nav>
+        <p>last updated: 2026</p>
+    </footer>
+</body>
+</html>

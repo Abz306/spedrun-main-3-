@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts - Hielke AI</title>
+    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/account-dashboard.css?v=1">
+    <link rel="icon" type="image/webp" href="favicon.webp">
+    <script src="site.js" defer></script>
+    <script src="account.js" defer></script>
+</head>
+<body class="platform-page">
+    <header>
+      <nav>
+        <a class="brand" href="/"><img class="logo-img" src="/logo.png" alt="Hielke AI">Hielke AI</a>
+        <div class="nav-links">
+          <a href="/pricing">Pricing</a>
+          <a href="/definitions">Dictionary</a>
+          <a href="/excuses">Excuses</a>
+          <a class="btn btn-ghost" href="https://discord.gg/3b7W2mQBuV">Support</a>
+          <button class="theme-toggle nav-keep" id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+        </div>
+        <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+      </nav>
+    </header>
+    <main class="dashboard">
+        <section id="platform-login-panel" class="panel platform-login-panel">
+            <div class="platform-login-heading">
+                <span class="platform-kicker">Hielke AI homework</span>
+                <p>No Discord needed. Sign in to Sparx, pick a task, and Hielke AI does it.</p>
+            </div>
+            <p class="session-note">Your password is used for this sign-in session only. It is never saved to your Hielke AI account and is cleared when the sign-in finishes.</p>
+
+            <div class="platform-login-tabs" role="tablist" aria-label="Login method">
+                <button class="segment active" type="button" data-login-method="username">Username &amp; password</button>
+                <button class="segment" type="button" data-login-method="cookie">Cookie login</button>
+            </div>
+
+            <form id="direct-login-form">
+                <fieldset class="choice-field">
+                    <legend>Subject</legend>
+                    <div class="choice-grid subject-grid">
+                        <button class="choice active" type="button" data-platform="sparx_maths">Sparx Maths</button>
+                        <button class="choice" type="button" data-platform="sparx_science">Sparx Science</button>
+                        <button class="choice" type="button" data-platform="sparx_reader">Sparx Reader</button>
+                        <button class="choice" type="button" data-platform="seneca">Seneca</button>
+                        <button class="choice" type="button" data-platform="educake">Educake</button>
+                    </div>
+                </fieldset>
+
+                <div class="form-stack">
+                    <label for="platform-school">School</label>
+                    <input id="platform-school" placeholder="Your school's name" autocomplete="organization">
+
+                    <fieldset class="choice-field">
+                        <legend>How do you sign in to Sparx?</legend>
+                        <div class="choice-grid login-type-grid">
+                            <button class="choice active" type="button" data-login-type="normal">Sparx password</button>
+                            <button class="choice" type="button" data-login-type="Microsoft">Microsoft</button>
+                            <button class="choice" type="button" data-login-type="Google">Google</button>
+                        </div>
+                    </fieldset>
+
+                    <div class="credentials username-fields">
+                        <label for="platform-username">Sparx username</label>
+                        <input id="platform-username" autocomplete="username" placeholder="The username Sparx gave you">
+                        <label for="platform-password">Password</label>
+                        <input id="platform-password" type="password" autocomplete="current-password">
+                    </div>
+                    <div class="credentials cookie-fields" hidden>
+                        <label for="platform-cookie">Platform cookies</label>
+                        <textarea id="platform-cookie" rows="5" placeholder="Paste your platform cookie"></textarea>
+                    </div>
+                </div>
+                <button class="connect-button" type="submit">Connect to platform</button>
+                <p id="direct-login-message" class="form-message" role="alert" hidden></p>
+            </form>
+        </section>
+
+        <section id="login-panel" class="panel">
+            <h2>sign in</h2>
+            <div class="hero-actions">
+                <a href="/api/auth/discord" id="discord-signin">sign in with Discord</a>
+            </div>
+            <p>Sign in with your website username or email.</p>
+            <form id="auth-login-form">
+                <label for="auth-login">Username or email</label>
+                <input id="auth-login" autocomplete="username" required>
+                <label for="auth-password">Password</label>
+                <input id="auth-password" type="password" autocomplete="current-password" required>
+                <button type="submit">sign in</button>
+            </form>
+            <p><a href="#reset-password" id="reset-password-link">forgot password?</a></p>
+            <section class="panel account-create-panel">
+                <h3>create a username and email account</h3>
+                <form id="register-form">
+                    <label for="register-username">Username</label>
+                    <input id="register-username" pattern="[A-Za-z0-9_.-]{3,32}" required>
+                    <label for="register-email">Email</label>
+                    <input id="register-email" type="email" autocomplete="email" required>
+                    <label for="register-password">Password</label>
+                    <input id="register-password" type="password" minlength="8" autocomplete="new-password" required>
+                    <button type="submit">create account</button>
+                </form>
+            </section>
+            <details>
+                <summary>reset password</summary>
+                <form id="reset-form">
+                    <label for="reset-email">Email</label>
+                    <input id="reset-email" type="email" autocomplete="email" required>
+                    <button type="submit">send reset email</button>
+                </form>
+            </details>
+            <p id="login-message" class="form-message" role="alert" hidden></p>
+
+            <details>
+                <summary>sync an existing bot account by Discord ID</summary>
+                <p>Use this to link saved bot accounts. Your password stays encrypted and is only held during this browser session.</p>
+                <form id="account-login-form">
+                <label for="discord-id">Discord user ID</label>
+                <input id="discord-id" inputmode="numeric" autocomplete="off" pattern="[0-9]+" required>
+                <label for="master-password">Master password</label>
+                <input id="master-password" type="password" autocomplete="current-password">
+                <button type="submit">sync accounts</button>
+                <p id="login-message" class="form-message" role="alert" hidden></p>
+                </form>
+            </details>
+        </section>
+
+        <section id="account-panel" hidden>
+            <div class="dashboard-heading">
+                <div><p class="eyebrow">connected to the bot database</p><h2>your accounts</h2></div>
+                <button id="logout-button" class="secondary-button" type="button">sign out</button>
+            </div>
+            <p id="account-summary" class="integration-note"></p>
+
+            <section class="panel">
+                <h2>add a saved account</h2>
+                <form id="saved-account-form">
+                    <label for="platform">Platform</label>
+                    <select id="platform" required>
+                        <option value="sparx_maths">Sparx Maths</option>
+                        <option value="sparx_reader">Sparx Reader</option>
+                        <option value="sparx_science">Sparx Science</option>
+                        <option value="drfrost">Dr Frost</option>
+                        <option value="educake">Educake</option>
+                        <option value="seneca">Seneca</option>
+                        <option value="purplemash">Purple Mash</option>
+                    </select>
+                    <label><input id="cookie-login" type="checkbox"> Cookie login</label>
+                    <div id="credential-fields">
+                        <label for="username">Username / email</label>
+                        <input id="username">
+                        <label for="password">Password</label>
+                        <input id="password" type="password">
+                        <label for="school">School (if required)</label>
+                        <input id="school">
+                    </div>
+                    <div id="cookie-field" hidden>
+                        <label for="cookie">Cookie</label>
+                        <textarea id="cookie" rows="4"></textarea>
+                    </div>
+                    <button type="submit">save account</button>
+                    <p id="save-message" class="form-message" role="alert" hidden></p>
+                </form>
+            </section>
+
+
+            <section class="panel">
+                <h2>saved accounts</h2>
+                <div id="saved-accounts" class="account-list"></div>
+            </section>
+
+            <section class="panel">
+                <h2>main accounts</h2>
+                <div id="main-accounts" class="account-list"></div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

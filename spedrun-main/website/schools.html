@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School directory - Hielke AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="favicon.webp">
+    <script src="school-directory-data.js" defer></script>
+    <script src="schools.js" defer></script>
+    <script src="site.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="site-bar">
+            <a class="site-brand" href="index.html" aria-label="Hielke AI home">
+                <span class="brand-mark" aria-hidden="true"><span class="logo-placeholder">✳</span><img class="site-logo" src="logo.png" alt=""></span>
+                <span>hielke ai</span>
+            </a>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle colour theme" aria-pressed="false">☾ dark mode</button>
+        </div>
+        <h1>school directory</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="links.html">links</a>
+        <a href="contact.html">contact</a>
+        <a href="projects.html">projects</a>
+        <a href="schools.html" aria-current="page">schools</a>
+        <a href="sparx.html">sparx</a>
+        <a href="excuses.html">excuses</a>
+        <a href="definitions.html">dictionary</a>
+        <a href="payment.html">payment</a>
+        <a href="https://discord.gg/SYGz4ZTkTZ">discord</a>
+    </nav>
+
+    <main>
+        <section class="home-hero" aria-labelledby="schools-heading">
+            <p class="eyebrow"><span id="school-directory-count">Loading schools…</span></p>
+            <h2 id="schools-heading">Search the school directory</h2>
+            <p>This searchable view shows school names, towns, and products from the supplied spreadsheet. School usernames and full street addresses are intentionally not displayed.</p>
+        </section>
+
+        <section class="dictionary-browser panel" aria-label="Searchable school list">
+            <label class="school-directory-search-label" for="school-directory-search">Search by school, town, or product</label>
+            <input id="school-directory-search" class="dictionary-search-input" type="search" placeholder="Type a school, town, or product…" autocomplete="off">
+            <p id="school-directory-status" class="stat-caption" role="status" aria-live="polite"></p>
+            <div class="school-directory-table-wrap">
+                <table class="school-directory-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">School</th>
+                            <th scope="col">Town</th>
+                            <th scope="col">Products</th>
+                        </tr>
+                    </thead>
+                    <tbody id="school-directory-rows"></tbody>
+                </table>
+            </div>
+            <div class="dict-show-more">
+                <button id="school-directory-show-more" class="payment-button" type="button">show more</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav class="footer-links" aria-label="Footer links">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="links.html">links</a>
+            <a href="contact.html">contact</a>
+            <a href="projects.html">projects</a>
+            <a href="schools.html" aria-current="page">schools</a>
+            <a href="sparx.html">sparx</a>
+            <a href="excuses.html">excuses</a>
+            <a href="definitions.html">dictionary</a>
+            <a href="payment.html">payment</a>
+            <a href="dashboard.html">dashboard</a>
+            <a href="https://discord.gg/SYGz4ZTkTZ">discord</a>
+            <a href="https://chat.mistral.ai">mistral</a>
+        </nav>
+        <p>last updated: 2026</p>
+    </footer>
+</body>
+</html>

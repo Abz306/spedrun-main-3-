@@ -1,0 +1,82 @@
+{
+    "text": "## Sparx Maths Settings\n\n**PDF Settings**\nAnswers  ``✅``\nQuestions  ${userSetting.pdfSettings?.question ? '``✅``' : '``❌``'}\nWorking Out  ${userSetting.pdfSettings?.working_out ? '``✅``' : '``❌``'}\n> These are the settings for the pdf provided at the end of each session and is what will be included in the pdf.\n**Model Order**\n${userSetting.model ?? 'No Models'}\n> The order of the models that will assist you with your homework.",
+    "colour": "sparx_maths",
+    "settings": {
+        "pdf_settings": {
+            "label": "PDF Settings",
+            "emoji": "pdf",
+            "inputs": [
+                {
+                    "type": "choice",
+                    "id": "question",
+                    "placeholder": "Show the question in the PDF?",
+                    "inside": "pdfSettings",
+                    "boolean": true,
+                    "options": [
+						{ "label": "Show Question", "value": "true" },
+						{ "label": "Don't Show Question", "value": "false" }
+                    ]
+                },
+                {
+                    "type": "choice",
+                    "id": "working_out",
+                    "inside": "pdfSettings",
+                    "boolean": true,
+                    "placeholder": "Show the working out in the PDF?",
+                    "options": [
+                        { "label": "Show Working Out", "value": "true" },
+						{ "label": "Don't Show Working Out", "value": "false" }
+                    ]
+                }
+            ]
+        },
+        "fake_time": {
+            "label": "Edit Time",
+            "emoji": "queue",
+            "inputs": [
+                {
+                    "type": "number",
+                    "id": "min",
+                    "label": "Min Time (Seconds)",
+                    "placeholder": "0-180",
+                    "valueRange": {
+                        "max": 180,
+                        "min": 0
+                    }
+                },
+                {
+                    "type": "number",
+                    "id": "max",
+                    "label": "Max Time (Seconds)",
+                    "placeholder": "0-180",
+                    "valueRange": {
+                        "max": 180,
+                        "min": 0
+                    }
+                }
+            ]
+        },
+        "model_settings": {
+            "label": "Model Settings",
+            "emoji": "x",
+            "inputs": [
+                {
+                    "type": "choice",
+                    "id": "model",
+                    "placeholder": "Model Order",
+                    "options": [
+						{ "label": "No Models", "value": "No Models" },
+						{ "label": "Gemini 3.8 Flash", "value": "gemini:gemini-3.8-flash" },
+                        { "label": "Gemini Flash -> Gemini Pro", "value": "gemini:gemini-3.8-flash -> gemini:gemini-3-pro-preview" },
+                        { "label": "Mistral Small", "value": "mistral:mistral-small-latest" },
+                        { "label": "Qwen Turbo", "value": "qwen:qwen-turbo" },
+                        { "label": "Qwen VL Plus", "value": "qwen:qwen-vl-plus" },
+                        { "label": "OpenRouter Mistral Small", "value": "openrouter:mistralai/mistral-small-3.2-24b-instruct" },
+                        { "label": "OpenRouter Qwen 3", "value": "openrouter:qwen/qwen3-30b-a3b" }
+                    ]
+                }
+            ]
+        }
+    },
+    "constraints": ["min <= max"]
+}

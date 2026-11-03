@@ -1,0 +1,15 @@
+.env
+apikeys.txt
+apikeys_exhausted.txt
+node_modules/
+venv/
+__pycache__/
+*.py[cod]
+*.log
+logs.txt
+sessionLogs/
+.vscode/
+# Exclude generated/private data payloads from public publish
+database-uploader-database-uploader/Database/**/*.csv
+database-uploader-database-uploader/Database/**/*.sql
+database-uploader-database-uploader/Database/**/*.txt

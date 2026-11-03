@@ -1,0 +1,54 @@
+{
+    "text": "## Sparx Science Settings\n\n**Time**\n${userSetting.min}-${userSetting.max} Seconds\n> Time is how long the bot will take for each question to simulate real effort. Time is **PER QUESTION**, not per homework. The recommended Time is 20-40s and cannot be set above 180s to prevent getting caught!\n**Model Order**\n${userSetting.model ?? 'No Models'}\n> The order of the models that will assist you with your homework.",
+    "colour": "sparx_science",
+    "settings": {
+        "time": {
+            "label": "Edit Time",
+            "emoji": "queue",
+            "inputs": [
+                {
+                    "type": "number",
+                    "id": "min",
+                    "label": "Min Time (Seconds)",
+                    "placeholder": "0-180",
+                    "valueRange": {
+                        "max": 180,
+                        "min": 0
+                    }
+                },
+                {
+                    "type": "number",
+                    "id": "max",
+                    "label": "Max Time (Seconds)",
+                    "placeholder": "0-180",
+                    "valueRange": {
+                        "max": 180,
+                        "min": 0
+                    }
+                }
+            ]
+        },
+        "model_settings": {
+            "label": "Model Settings",
+            "emoji": "x",
+            "inputs": [
+                {
+                    "type": "choice",
+                    "id": "model",
+                    "placeholder": "Model Order",
+                    "options": [
+						{ "label": "No Models", "value": "No Models" },
+						{ "label": "Gemini 3.8 Flash", "value": "gemini:gemini-3.8-flash" },
+                        { "label": "Gemini Flash -> Gemini Pro", "value": "gemini:gemini-3.8-flash -> gemini:gemini-3-pro-preview" },
+                        { "label": "Mistral Small", "value": "mistral:mistral-small-latest" },
+                        { "label": "Qwen Turbo", "value": "qwen:qwen-turbo" },
+                        { "label": "Qwen VL Plus", "value": "qwen:qwen-vl-plus" },
+                        { "label": "OpenRouter Mistral Small", "value": "openrouter:mistralai/mistral-small-3.2-24b-instruct" },
+                        { "label": "OpenRouter Qwen 3", "value": "openrouter:qwen/qwen3-30b-a3b" }
+                    ]
+                }
+            ]
+        }
+    },
+    "constraints": ["min <= max"]
+}

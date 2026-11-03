@@ -1,0 +1,49 @@
+:root{
+  --comic-sans:"Hielke Comic","Comic Sans MS","Comic Sans",cursive;
+}
+@font-face{
+  font-family:"Hielke Comic";
+  src:url("/comic.ttf?v=1") format("truetype");
+  font-display:swap;
+}
+body, body *, button, input, textarea, select{
+  font-family:var(--comic-sans)!important;
+}
+h1,h2,h3,h4,.brand,.hero h1,.btn,.nav-links a{
+  font-family:var(--comic-sans)!important;
+  letter-spacing:0!important;
+}
+.hielke-discord{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:.45rem!important;
+  background:#5865f2!important;
+  color:#fff!important;
+  border-radius:999px!important;
+  padding:.65rem 1rem!important;
+  text-decoration:none!important;
+  font-family:var(--comic-sans)!important;
+  font-weight:700!important;
+}
+html,body{background:#090a09!important}
+body{color:#f5f4f0!important}
+.wrap::before,.main::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,#ffffff08 1px,transparent 1px);background-size:24px 24px;z-index:-1}
+header{box-shadow:0 1px 0 rgba(255,255,255,.025)}
+.brand{font-size:1.08rem!important;letter-spacing:-.02em!important}
+.brand::after{content:"";width:7px;height:7px;margin-left:-3px;border-radius:50%;background:#ef2b3b;box-shadow:0 0 12px #ef2b3b}
+.nav-links{gap:18px!important}
+.nav-links a{position:relative}
+.nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:2px;background:#ef2b3b;transition:right .18s ease}
+.nav-links a:not(.btn):hover::after{right:0}
+.btn-primary{background:#ef2b3b!important;color:#fff!important}
+.btn-primary:hover{background:#ff4655!important}
+.hero h1 em{color:#ef2b3b}
+.feature-card,.dotd-card,.excuse-card,.dictionary-browser,.dictionary-search-box,.definition-panel,.excuse-generator-panel{
+  border-color:#292924!important;background:linear-gradient(145deg,#121212,#181818)!important;border-radius:18px!important
+}
+.feature-card,.dotd-card,.excuse-card{position:relative;overflow:hidden}
+.feature-card::before,.dotd-card::before,.excuse-card::before{content:"";position:absolute;top:0;left:0;width:44px;height:3px;background:#ef2b3b}
+.payment-button,.filter-btn,.dictionary-letter,.dotd-controls button,.excuse-controls button{
+  font-family:var(--comic-sans)!important;border-radius:999px!important
+}
+.dotd-word,.excuse-text{overflow-wrap:anywhere}

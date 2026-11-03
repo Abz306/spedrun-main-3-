@@ -1,0 +1,25 @@
+CREATE OR REPLACE FUNCTION public.get_sparx_answer(table_name text, search_content text)
+ RETURNS jsonb
+ LANGUAGE plpgsql
+ STABLE
+AS $function$
+DECLARE
+    result jsonb;
+BEGIN
+    EXECUTE format(
+        'SELECT jsonb_build_object(
+            ''answer'', answer,
+            ''incorrect_answers'', incorrect_answers,
+            ''ai_model'', ai_model
+        )
+         FROM %I
+         WHERE content = $1
+         LIMIT 1',
+        table_name
+    )
+    INTO result
+    USING search_content;
+
+    RETURN result;
+END;
+$function$

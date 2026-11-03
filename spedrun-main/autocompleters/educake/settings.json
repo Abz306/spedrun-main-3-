@@ -1,0 +1,33 @@
+{
+    "text": "## Educake Settings\n\n**Time**\n${userSetting.min}-${userSetting.max} Seconds\n> Time is the amount of time the bot will wait for each question. This is **PER QUESTION**, not per homework. The recommended time is 5-10 Seconds per question.\n",
+    "colour": "educake",
+    "settings": {
+        "time": {
+            "label": "Edit Time",
+            "emoji": "queue",
+            "inputs": [
+                {
+                    "type": "number",
+                    "id": "min",
+                    "label": "Min Time (Seconds)",
+                    "placeholder": "0-180",
+                    "valueRange": {
+                        "max": 180,
+                        "min": 0
+                    }
+                },
+                {
+                    "type": "number",
+                    "id": "max",
+                    "label": "Max Time (Seconds)",
+                    "placeholder": "0-180",
+                    "valueRange": {
+                        "max": 180,
+                        "min": 0
+                    }
+                }
+            ]
+        }
+    },
+    "constraints": ["min <= max"]
+}
